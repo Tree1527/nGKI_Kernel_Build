@@ -71,8 +71,7 @@ runs:
                 false
             fi
 
-            cat $IMAGE_DIR/$DTB_PATH/${{ env.GENERATE_CHIP }}/*.dtb > $IMAGE_DIR/DTB
-            cp -fp $IMAGE_DIR/DTB tmp
+            cp -fp $IMAGE_DIR/$DTB_PATH/${{ env.GENERATE_CHIP }}/${{ env.DTB_NAME }}.dtb tmp/dtb
             echo "Generated ${{ env.GENERATE_CHIP }} DTB."
           else
             echo "Doesn't found DTB! Your device maybe needn't the file."
